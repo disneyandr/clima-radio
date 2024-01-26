@@ -1,9 +1,9 @@
 @import 'reset.scss';
 @import 'mixin.scss';
 :root {
+  --main-bkg: #000000;
   --box-principal: #121212;
   --box-secundario: #242424;
-  --body-bkg: #000000;
   --box-card: #181818;
   --font-white: #FFFFFF;
   --font-black: #000000;
@@ -12,6 +12,9 @@
   --bkp-pill-black: #0F0F0F;
   --bkg-pill-white: #FFFFFF;
   --bkg-circle-social: #292929;
+
+  // bordas
+  --border-radius: 0.6rem;
 }
 
 

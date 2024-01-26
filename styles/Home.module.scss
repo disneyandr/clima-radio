@@ -12,12 +12,30 @@
   min-height: 100vh;
   background-color: var(--main-bkg);
   padding: 1rem 1rem 0;
+  grid-template-rows: 6.2rem;
 }
 
 .header {
   grid-area: cabecalho;
   background-color: var(--box-principal);
   border-radius: var(--border-radius);
+  padding: 1.5rem;
+
+  .header__container{
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+  }
+  .iconText{
+    display: flex;
+    font-size: 1.2rem;
+    font-weight: 700;
+    gap: 1rem;
+    color: var(--font-white);
+  }
+  .iconTextGray{
+    color: var(--font-gray);
+  }
 }
 .sidebar {
   grid-area: sidebar;

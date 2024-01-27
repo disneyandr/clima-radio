@@ -1,46 +1,105 @@
 .main {
   display: grid;
-  grid-template-areas: 
-  "cabecalho conteudo conteudo conteudo"
-  "sidebar conteudo conteudo conteudo"
-  "sidebar conteudo conteudo conteudo"
-  "sidebar conteudo conteudo conteudo"
-  "sidebar conteudo conteudo conteudo"
-  "rodape rodape rodape rodape";
+  grid-template-areas:
+    "cabecalho conteudo conteudo conteudo"
+    "sidebar conteudo conteudo conteudo"
+    "sidebar conteudo conteudo conteudo"
+    "sidebar conteudo conteudo conteudo"
+    "sidebar conteudo conteudo conteudo"
+    "rodape rodape rodape rodape";
   grid-gap: 1rem;
   gap: 0.5rem;
   min-height: 100vh;
   background-color: var(--main-bkg);
   padding: 1rem 1rem 0;
   grid-template-rows: 6.2rem;
+  grid-template-columns: 1fr 2fr;
 }
-
+.hidden{
+  display: none;
+}
 .header {
   grid-area: cabecalho;
   background-color: var(--box-principal);
   border-radius: var(--border-radius);
   padding: 1.5rem;
 
-  .header__container{
+  .header__container {
     display: flex;
     gap: 1rem;
     flex-direction: column;
   }
-  .iconText{
+
+  .iconText {
     display: flex;
     font-size: 1.2rem;
     font-weight: 700;
     gap: 1rem;
     color: var(--font-white);
   }
-  .iconTextGray{
+
+  .iconTextGray {
     color: var(--font-gray);
   }
 }
+
 .sidebar {
   grid-area: sidebar;
   background-color: var(--box-principal);
   border-radius: var(--border-radius);
+
+  .sidebar__container {
+    padding: 1.5rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .sidebar__tools {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0 1rem;
+      .tools_titulo {
+        display: flex;
+        font-size: 1.2rem;
+        font-weight: 700;
+        gap: 1rem;
+        color: var(--font-gray);
+      }
+      .tools_cta{
+        display: flex;
+        font-size: 1.2rem;
+        font-weight: 700;
+        gap: 1.5rem;
+        color: var(--font-gray);
+        cursor: pointer;
+      }
+    }
+
+    .sidebar__card{
+      display: flex;
+      flex-direction: column;
+
+      background-color: var(--box-secundario);
+      padding: 1rem;
+      border-radius: var(--border-radius);
+
+      .card_textos{
+        color: var(--font-white);
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+
+        .card_titulo{
+          font-weight: bold;
+        }
+      }
+    }
+    .max_widht{
+      max-width: 8rem;
+    }
+  }
 }
 
 .content {

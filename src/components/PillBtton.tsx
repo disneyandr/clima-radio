@@ -5,8 +5,9 @@ interface PillButtonProps {
     text?: string;
     textColor?: string;
     icon?: React.ReactNode;
+    maxWidht?: string;
 }
-const PillButton: React.FC<PillButtonProps> = ({ backgroundColor, text, textColor, icon }) => {
+const PillButton: React.FC<PillButtonProps> = ({ backgroundColor, text, textColor, icon, maxWidht }) => {
     const buttonStyle: React.CSSProperties = {
         backgroundColor,
         color: textColor,
@@ -17,6 +18,8 @@ const PillButton: React.FC<PillButtonProps> = ({ backgroundColor, text, textColo
         fontSize: '14px', // Ajuste o valor conforme necessário
         display: 'flex',
         alignItems: 'center',
+        maxWidth: maxWidht,
+        fontWeight: 'bold'
     };
 
     const iconStyle: React.CSSProperties ={

@@ -4,6 +4,11 @@ import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.scss";
 import { FaSearch } from "react-icons/fa";
 import { FaHome } from "react-icons/fa";
+import { FaRegListAlt } from "react-icons/fa";
+import { FaPlus } from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa";
+import { FaArrowLeft } from "react-icons/fa";
+
 import PillButton from "../components/PillBtton";
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,7 +36,44 @@ export default function Home() {
 
         </div>
         <div className={styles.sidebar}>
-          sidebar
+          <div className={styles.sidebar__container}>
+
+            <div className={styles.sidebar__tools}>
+              <div className={styles.tools_titulo}>
+                <FaRegListAlt />
+                <span>Your Library</span>
+              </div>
+              <div className={styles.tools_cta}>
+                <FaPlus />
+                <FaArrowRight />
+                <FaArrowLeft className={styles.hidden} />
+              </div>
+            </div>
+            <div className={styles.sidebar__card}>
+              <div className={styles.card_textos}>
+
+                <div className={styles.card_titulo}>
+                  Create your first playlist
+                </div>
+                <div className={styles.card_text}>
+                  It's easy, we'll help you
+                </div>
+              </div>
+              <PillButton backgroundColor="#FFF" text="Creat playlist" textColor="#000" maxWidht="8rem" />
+            </div>
+            <div className={styles.sidebar__card}>
+              <div className={styles.card_textos}>
+
+                <div className={styles.card_titulo}>
+                  Let's find some podecasts to follow
+                </div>
+                <div className={styles.card_text}>
+                  We'll keep you updated on new episodes
+                </div>
+              </div>
+              <PillButton backgroundColor="#FFF" text="Browse podcasts" textColor="#000" maxWidht="9.8rem" />
+            </div>
+          </div>
         </div>
         <div className={styles.content}>
           conteudo

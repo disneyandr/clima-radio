@@ -85,7 +85,13 @@ export default function Home() {
           conteudo
         </div>
         <footer className={styles.footer}>
-          footer
+          <div className={styles.footer__container}>
+            <div className={styles.textos}>
+              <span className={styles.titulo}>Preview of Spotify</span>
+              <span>Sign up to get unlimited songs and podcasts with occasional ads. No credit card needed.</span>
+            </div>
+            <PillButton backgroundColor="#FFF" text="Sign up free" textColor="#000" maxWidht="9.8rem" />
+          </div>
         </footer>
       </main>
     </>

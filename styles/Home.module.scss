@@ -106,6 +106,16 @@
   grid-area: conteudo;
   background-color: var(--box-principal);
   border-radius: var(--border-radius);
+
+  .content__container{
+    padding: 0.5rem;
+    .container_navbar{
+      .nav_container{
+        display: flex;
+        gap: 1rem;
+      }
+    }
+  }
 }
 
 .footer {

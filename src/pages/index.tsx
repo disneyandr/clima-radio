@@ -9,9 +9,12 @@ import { FaPlus } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa";
 import { FaArrowLeft } from "react-icons/fa";
 import { FaSpotify } from "react-icons/fa";
+import { FaAngleLeft } from "react-icons/fa";
+import { FaAngleRight } from "react-icons/fa";
 
 
 import PillButton from "../components/PillBtton";
+import CircleButton from "../components/CircleBtton";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -26,7 +29,7 @@ export default function Home() {
       <main className={styles.main}>
         <header className={styles.header}>
           <div className={styles.header__container}>
-          <div className={styles.iconText}>
+            <div className={styles.iconText}>
               <FaSpotify />
               <span>Spotify</span>
             </div>
@@ -82,7 +85,18 @@ export default function Home() {
           </div>
         </aside>
         <div className={styles.content}>
-          conteudo
+          <div className={styles.content__container}>
+            <nav className={styles.container_navbar}>
+              <div className={styles.nav_container}>
+                <CircleButton backgroundColor="#050505" fontSize="1rem" icon={<FaAngleLeft />} textColor="#FFF" />
+                <CircleButton backgroundColor="#050505" fontSize="1rem" icon={<FaAngleRight />} textColor="#FFF" />
+              </div>
+            </nav>
+            <div className={styles.container_list}></div>
+            <div className={styles.container_siteMap}></div>
+            <hr />
+            <div className={styles.container_footer}></div>
+          </div>
         </div>
         <footer className={styles.footer}>
           <div className={styles.footer__container}>

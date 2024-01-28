@@ -8,6 +8,8 @@ import { FaRegListAlt } from "react-icons/fa";
 import { FaPlus } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa";
 import { FaArrowLeft } from "react-icons/fa";
+import { FaSpotify } from "react-icons/fa";
+
 
 import PillButton from "../components/PillBtton";
 const inter = Inter({ subsets: ["latin"] });
@@ -22,8 +24,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <div className={styles.header}>
+        <header className={styles.header}>
           <div className={styles.header__container}>
+          <div className={styles.iconText}>
+              <FaSpotify />
+              <span>Spotify</span>
+            </div>
             <div className={styles.iconText}>
               <FaHome />
               <span>Home</span>
@@ -34,8 +40,8 @@ export default function Home() {
             </div>
           </div>
 
-        </div>
-        <div className={styles.sidebar}>
+        </header>
+        <aside className={styles.sidebar}>
           <div className={styles.sidebar__container}>
 
             <div className={styles.sidebar__tools}>
@@ -74,13 +80,13 @@ export default function Home() {
               <PillButton backgroundColor="#FFF" text="Browse podcasts" textColor="#000" maxWidht="9.8rem" />
             </div>
           </div>
-        </div>
+        </aside>
         <div className={styles.content}>
           conteudo
         </div>
-        <div className={styles.footer}>
+        <footer className={styles.footer}>
           footer
-        </div>
+        </footer>
       </main>
     </>
   );

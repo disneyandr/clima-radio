@@ -112,7 +112,21 @@
     .container_navbar{
       .nav_container{
         display: flex;
-        gap: 1rem;
+        justify-content: space-between;
+        align-items: center;
+        
+
+        .nav_icons{
+          display: flex;
+          gap: 0.5rem
+        }
+        .textAndButton{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 0.5rem;
+          font-weight: bold;
+        }
       }
     }
   }

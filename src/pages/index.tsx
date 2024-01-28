@@ -15,6 +15,7 @@ import { FaAngleRight } from "react-icons/fa";
 
 import PillButton from "../components/PillBtton";
 import CircleButton from "../components/CircleBtton";
+import TextButton from "../components/TextButton";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -68,7 +69,7 @@ export default function Home() {
                   It's easy, we'll help you
                 </div>
               </div>
-              <PillButton backgroundColor="#FFF" text="Creat playlist" textColor="#000" maxWidht="8rem" />
+              <PillButton backgroundColor="#FFF" text="Creat playlist" textColor="#000" width="8rem" />
             </div>
             <div className={styles.sidebar__card}>
               <div className={styles.card_textos}>
@@ -80,7 +81,7 @@ export default function Home() {
                   We'll keep you updated on new episodes
                 </div>
               </div>
-              <PillButton backgroundColor="#FFF" text="Browse podcasts" textColor="#000" maxWidht="9.8rem" />
+              <PillButton backgroundColor="#FFF" text="Browse podcasts" textColor="#000" width="9.8rem" />
             </div>
           </div>
         </aside>
@@ -88,8 +89,21 @@ export default function Home() {
           <div className={styles.content__container}>
             <nav className={styles.container_navbar}>
               <div className={styles.nav_container}>
-                <CircleButton backgroundColor="#050505" fontSize="1rem" icon={<FaAngleLeft />} textColor="#FFF" />
-                <CircleButton backgroundColor="#050505" fontSize="1rem" icon={<FaAngleRight />} textColor="#FFF" />
+                <div className={styles.nav_icons}>
+
+                  <CircleButton backgroundColor="#050505" fontSize="1rem" icon={<FaAngleLeft />} textColor="#FFF" />
+                  <CircleButton backgroundColor="#050505" fontSize="1rem" icon={<FaAngleRight />} textColor="#FFF" />
+                </div>
+                <div className={styles.textAndButton}>
+
+                  <TextButton textColor="#8F8F8F" text="Premium" />
+                  <TextButton textColor="#8F8F8F" text="Suport" />
+                  <TextButton textColor="#8F8F8F" text="Download" />
+                  <span style={{ color: '#FFF' }}> | </span>
+                  <TextButton textColor="#8F8F8F" text="Sign UP" />
+                  <PillButton text="Log In"/>
+
+                </div>
               </div>
             </nav>
             <div className={styles.container_list}></div>
@@ -104,7 +118,7 @@ export default function Home() {
               <span className={styles.titulo}>Preview of Spotify</span>
               <span>Sign up to get unlimited songs and podcasts with occasional ads. No credit card needed.</span>
             </div>
-            <PillButton backgroundColor="#FFF" text="Sign up free" textColor="#000" maxWidht="9.8rem" />
+            <PillButton backgroundColor="#FFF" text="Sign up free" textColor="#000" width="8rem" />
           </div>
         </footer>
       </main>

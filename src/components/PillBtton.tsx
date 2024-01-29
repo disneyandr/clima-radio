@@ -1,37 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 
 interface PillButtonProps {
     backgroundColor: string;
     text?: string;
     textColor?: string;
     icon?: React.ReactNode;
-    maxWidht?: string;
+    width?: string;
+    fontSize?: string;
+    padding?: string;
 }
-const PillButton: React.FC<PillButtonProps> = ({ backgroundColor, text, textColor, icon, maxWidht }) => {
+
+const PillButton: React.FC<PillButtonProps> = ({ backgroundColor, text, textColor, icon, width, fontSize, padding }) => {
+    const [isHovered, setIsHovered] = useState(false);
+
     const buttonStyle: React.CSSProperties = {
         backgroundColor,
         color: textColor,
-        borderRadius: '20px', // Ajuste o valor conforme necessário
-        padding: '10px 20px', // Ajuste o valor conforme necessário
+        borderRadius: '20px',
+        padding: padding ? padding :'10px 20px',
         border: 'none',
         cursor: 'pointer',
-        fontSize: '14px', // Ajuste o valor conforme necessário
+        fontSize: fontSize ? fontSize : '14px',
         display: 'flex',
         alignItems: 'center',
-        maxWidth: maxWidht,
-        fontWeight: 'bold'
+        width: width,
+        fontWeight: 'bold',
+        transform: isHovered ? 'scale(1.1)' : 'scale(1)', // Ajuste o valor conforme necessário
+        transition: "transform 0.3s",
     };
 
-    const iconStyle: React.CSSProperties ={
+    const iconStyle: React.CSSProperties = {
         marginRight: '8px',
     };
 
-    return(
-        <button style={buttonStyle}>
+    return (
+        <button
+            style={buttonStyle}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+        >
             {icon && <span style={iconStyle}>{icon}</span>}
             {text}
         </button>
-    )
+    );
 }
 
 export default PillButton;

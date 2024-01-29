@@ -113,14 +113,14 @@
   border-radius: var(--border-radius);
 
   .content__container {
-    padding: 1rem;
+    padding: 1rem 0;
 
     .container_navbar {
       .nav_container {
         display: flex;
         justify-content: space-between;
         align-items: center;
-
+        padding: 0 1rem 1rem;
 
         .nav_icons {
           display: flex;
@@ -139,6 +139,18 @@
             margin-right: 1.5rem;
           }
         }
+      }
+    }
+
+    .container_playList{
+      padding: 0.5rem 1rem;
+      background: linear-gradient(to bottom, #1f1f1f, #121212);
+
+      .playlist_textLink{
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
       }
     }
   }

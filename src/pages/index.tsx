@@ -108,10 +108,15 @@ export default function Home() {
                 </div>
               </div>
             </nav>
-            <div className={styles.container_list}></div>
-            <div className={styles.container_siteMap}></div>
-            <hr />
-            <div className={styles.container_footer}></div>
+            <div className={styles.container_playList}>
+              <div className={styles.playlist_textLink}>
+                <TextButton textColor="#FFF" text="Spotify Playlists" fontSize="1.5rem" fontWeigth="bold" />
+                <TextButton textColor="#8F8F8F" text="Show all" />
+              </div>
+              <div className={styles.playlist_siteMap}></div>
+              <hr />
+              <div className={styles.playlist_footer}></div>
+            </div>
           </div>
         </div>
         <footer className={styles.footer}>

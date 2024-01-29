@@ -4,12 +4,14 @@ interface TextButtonProps {
     text: string;
     textColor?: string;
     fontSize?: string;
+    fontWeigth?: string;
 }
 
-const TextButton: React.FC<TextButtonProps> = ({ text, textColor, fontSize }) => {
+const TextButton: React.FC<TextButtonProps> = ({ text, textColor, fontSize, fontWeigth }) => {
     const [isHovered, setIsHovered] = useState(false);
 
     const textStyle: React.CSSProperties = {
+        fontWeight: fontWeigth,
         fontSize: fontSize,
         color: isHovered ? "#FFF" : textColor, // Altere "red" para a cor desejada no hover
         cursor: "pointer",

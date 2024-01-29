@@ -1,5 +1,6 @@
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import Head from "next/head";
-import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.scss";
 import { FaSearch } from "react-icons/fa";
@@ -12,14 +13,54 @@ import { FaSpotify } from "react-icons/fa";
 import { FaAngleLeft } from "react-icons/fa";
 import { FaAngleRight } from "react-icons/fa";
 
+import authenticateSpotify from './api/authorization'
 
 import PillButton from "../components/PillBtton";
 import CircleButton from "../components/CircleBtton";
 import TextButton from "../components/TextButton";
 import Disco from "../components/Disco";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const [token, setToken] = useState('');
+  const [profile, setProfile] = useState('');
+
+  useEffect(() => {
+    async function fetchToken() {
+      try {
+        const accessToken = await authenticateSpotify();
+        setToken(accessToken);
+      } catch (error) {
+        console.error('Erro ao autenticar Spotify:', error);
+      }
+    }
+
+    async function fetchUserProfile() {
+      try {
+        const response = await axios.get('https://api.spotify.com/v1/tracks/3T8Ht5f3xUejqEctN3RGb6', {
+          headers: {
+            Authorization: 'Bearer ' + token
+          }
+        });
+
+        const data = response.data;
+        setProfile(data);
+        console.log('Perfil do usuário:', data);
+      } catch (error) {
+        console.error('Erro ao obter perfil:', error);
+      }
+    }
+
+    fetchToken();
+
+    // Chame a função fetchUserProfile dentro do escopo do useEffect
+    if (token) {
+      // console.log(token)
+      fetchUserProfile();
+    }
+  }, [token]); // Adicione token como dependência para o useEffect
+
   return (
     <>
       <Head>
@@ -114,9 +155,19 @@ export default function Home() {
                 <TextButton textColor="#FFF" text="Spotify Playlists" fontSize="1.5rem" fontWeigth="bold" />
                 <TextButton textColor="#8F8F8F" text="Show all" />
               </div>
-              <div className={styles.playlist_disco}>
-                <Disco image="/images/MegaHit.png" titulo="All Out 90s" subTitulo="The biggest songs of the 1990s. Cover:" />
-              </div>
+              {profile && (
+                <div className={styles.playlist_disco}>
+
+                  {Object.keys(profile).map(key => (
+                    key !== 'artists' && (
+                      <React.Fragment key={key}>
+                        <Disco image={profile.album.images[0].url} titulo={profile.album.artists[0].name} subTitulo={profile.name} />
+                      </React.Fragment>
+                    )
+                  ))}
+
+                </div>
+              )}
               <div className={styles.playlist_siteMap}></div>
               <hr />
               <div className={styles.playlist_footer}></div>

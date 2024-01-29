@@ -129,7 +129,7 @@
 
         .textAndButton {
           display: flex;
-          
+
           .text {
             display: flex;
             justify-content: center;
@@ -142,16 +142,26 @@
       }
     }
 
-    .container_playList{
+    .container_playList {
       padding: 0.5rem 1rem;
       background: linear-gradient(to bottom, #1f1f1f, #121212);
 
-      .playlist_textLink{
+      .playlist_textLink {
         margin-bottom: 1rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
       }
+
+      .playlist_disco {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        max-height: 16rem;
+        overflow-x: hidden;
+        /* Alterado de auto para scroll */
+      }
+
     }
   }
 }

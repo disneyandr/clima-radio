@@ -16,6 +16,7 @@ import { FaAngleRight } from "react-icons/fa";
 import PillButton from "../components/PillBtton";
 import CircleButton from "../components/CircleBtton";
 import TextButton from "../components/TextButton";
+import Disco from "../components/Disco";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -112,6 +113,9 @@ export default function Home() {
               <div className={styles.playlist_textLink}>
                 <TextButton textColor="#FFF" text="Spotify Playlists" fontSize="1.5rem" fontWeigth="bold" />
                 <TextButton textColor="#8F8F8F" text="Show all" />
+              </div>
+              <div className={styles.playlist_disco}>
+                <Disco image="/images/MegaHit.png" titulo="All Out 90s" subTitulo="The biggest songs of the 1990s. Cover:" />
               </div>
               <div className={styles.playlist_siteMap}></div>
               <hr />

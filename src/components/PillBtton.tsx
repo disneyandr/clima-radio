@@ -6,19 +6,21 @@ interface PillButtonProps {
     textColor?: string;
     icon?: React.ReactNode;
     width?: string;
+    fontSize?: string;
+    padding?: string;
 }
 
-const PillButton: React.FC<PillButtonProps> = ({ backgroundColor, text, textColor, icon, width }) => {
+const PillButton: React.FC<PillButtonProps> = ({ backgroundColor, text, textColor, icon, width, fontSize, padding }) => {
     const [isHovered, setIsHovered] = useState(false);
 
     const buttonStyle: React.CSSProperties = {
         backgroundColor,
         color: textColor,
         borderRadius: '20px',
-        padding: '10px 20px',
+        padding: padding ? padding :'10px 20px',
         border: 'none',
         cursor: 'pointer',
-        fontSize: '14px',
+        fontSize: fontSize ? fontSize : '14px',
         display: 'flex',
         alignItems: 'center',
         width: width,

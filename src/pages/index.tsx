@@ -95,13 +95,15 @@ export default function Home() {
                   <CircleButton backgroundColor="#050505" fontSize="1rem" icon={<FaAngleRight />} textColor="#FFF" />
                 </div>
                 <div className={styles.textAndButton}>
+                  <div className={styles.text}>
 
-                  <TextButton textColor="#8F8F8F" text="Premium" />
-                  <TextButton textColor="#8F8F8F" text="Suport" />
-                  <TextButton textColor="#8F8F8F" text="Download" />
-                  <span style={{ color: '#FFF' }}> | </span>
-                  <TextButton textColor="#8F8F8F" text="Sign UP" />
-                  <PillButton text="Log In"/>
+                    <TextButton textColor="#8F8F8F" text="Premium" />
+                    <TextButton textColor="#8F8F8F" text="Suport" />
+                    <TextButton textColor="#8F8F8F" text="Download" />
+                    <span style={{ color: '#FFF' }}> | </span>
+                    <TextButton textColor="#8F8F8F" text="Sign UP" />
+                  </div>
+                  <PillButton backgroundColor="#FFF" text="Log In" fontSize="18px" />
 
                 </div>
               </div>

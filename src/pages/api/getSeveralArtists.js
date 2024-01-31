@@ -2,7 +2,8 @@ import axios from 'axios';
 
 export default async function getSeveralArtists(accessToken, artistIds) {
   try {
-    const response = await axios.get('https://api.spotify.com/v1/artists', {
+    const urlArtists = process.env.URL_ARTISTS;
+    const response = await axios.get(urlArtists, {
       headers: {
         Authorization: 'Bearer ' + accessToken
       },

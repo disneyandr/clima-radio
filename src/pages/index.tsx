@@ -13,53 +13,46 @@ import { FaSpotify } from "react-icons/fa";
 import { FaAngleLeft } from "react-icons/fa";
 import { FaAngleRight } from "react-icons/fa";
 
-import authenticateSpotify from './api/authorization'
-
 import PillButton from "../components/PillBtton";
 import CircleButton from "../components/CircleBtton";
 import TextButton from "../components/TextButton";
 import Disco from "../components/Disco";
 
+// pegando a playlist
+
+import authenticateSpotify from "./api/accessToken";
+import getSeveralArtists from "./api/getSeveralArtists";
+
 const inter = Inter({ subsets: ["latin"] });
 
+
+
 export default function Home() {
-  const [token, setToken] = useState('');
-  const [profile, setProfile] = useState('');
+
+  const [playlistData, setPlaylistData] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    async function fetchToken() {
+    async function main() {
       try {
         const accessToken = await authenticateSpotify();
-        setToken(accessToken);
+        console.log('Token de Acesso Spotify:', accessToken);
+// 3JsMj0DEzyWc0VDlHuy9Bx supertramp  4bthk9UfsYUYdcFyqxmSUU tears for fears  36QJpDe2go2KgaRleHCDTp led zepplin 2WT1pbYjLJciAR26yMebkH pink floyd
+        const artistIds = ['3JsMj0DEzyWc0VDlHuy9Bx', '4bthk9UfsYUYdcFyqxmSUU', '36QJpDe2go2KgaRleHCDTp'];
+
+        const artistsData = await getSeveralArtists(accessToken, artistIds);
+        console.log('Dados de Artistas do Spotify:', artistsData);
+
+        setPlaylistData(artistsData);
+        setIsLoading(false); // Agora que os dados foram carregados, definimos isLoading como false
       } catch (error) {
-        console.error('Erro ao autenticar Spotify:', error);
+        console.error('Erro:', error.message);
       }
     }
 
-    async function fetchUserProfile() {
-      try {
-        const response = await axios.get('https://api.spotify.com/v1/tracks/3T8Ht5f3xUejqEctN3RGb6', {
-          headers: {
-            Authorization: 'Bearer ' + token
-          }
-        });
-
-        const data = response.data;
-        setProfile(data);
-        console.log('Perfil do usuário:', data);
-      } catch (error) {
-        console.error('Erro ao obter perfil:', error);
-      }
-    }
-
-    fetchToken();
-
-    // Chame a função fetchUserProfile dentro do escopo do useEffect
-    if (token) {
-      // console.log(token)
-      fetchUserProfile();
-    }
-  }, [token]); // Adicione token como dependência para o useEffect
+    // Chame a função principal
+    main();
+  }, []);
 
   return (
     <>
@@ -155,19 +148,24 @@ export default function Home() {
                 <TextButton textColor="#FFF" text="Spotify Playlists" fontSize="1.5rem" fontWeigth="bold" />
                 <TextButton textColor="#8F8F8F" text="Show all" />
               </div>
-              {profile && (
-                <div className={styles.playlist_disco}>
 
-                  {Object.keys(profile).map(key => (
-                    key !== 'artists' && (
-                      <React.Fragment key={key}>
-                        <Disco image={profile.album.images[0].url} titulo={profile.album.artists[0].name} subTitulo={profile.name} />
-                      </React.Fragment>
-                    )
-                  ))}
+              <div className={styles.playlist_disco}>
+                {isLoading ? (
+                  <p>Carregando...</p>
+                ) : (
+                  <>
+                    {playlistData.artists && playlistData.artists.map((artist,index) => (
+                      <Disco
+                        key={artist.id}
+                        image={artist.images[0].url}
+                        titulo={artist.name}
+                        subTitulo={artist.genres}
+                      />
+                    ))}
+                  </>
+                )}
+              </div>
 
-                </div>
-              )}
               <div className={styles.playlist_siteMap}></div>
               <hr />
               <div className={styles.playlist_footer}></div>

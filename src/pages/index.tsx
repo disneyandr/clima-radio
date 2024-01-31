@@ -57,8 +57,8 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Spotify</title>
-        <meta name="description" content="Spotify - Clima Digital" />
+        <title>Clima Rádio</title>
+        <meta name="description" content="Clima Rádio - Clima Digital" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -67,7 +67,7 @@ export default function Home() {
           <div className={styles.header__container}>
             <div className={styles.iconText}>
               <FaSpotify />
-              <span>Spotify</span>
+              <span>Clima Rádio</span>
             </div>
             <div className={styles.iconText}>
               <FaHome />

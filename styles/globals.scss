@@ -1,7 +1,9 @@
+@import 'reset.scss';
+@import 'mixin.scss';
 :root {
+  --main-bkg: #000000;
   --box-principal: #121212;
   --box-secundario: #242424;
-  --body-bkg: #000000;
   --box-card: #181818;
   --font-white: #FFFFFF;
   --font-black: #000000;
@@ -10,18 +12,15 @@
   --bkp-pill-black: #0F0F0F;
   --bkg-pill-white: #FFFFFF;
   --bkg-circle-social: #292929;
+
+  //footer 
+  --bkgColorUm-footer: #AE2896;
+  --bkgColorDois-footer: #509BF5;
+
+  // bordas
+  --border-radius: 0.6rem;
+
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}

@@ -1,3 +1,4 @@
+import styles from './styleSobre.module.scss';
 export default function Sobre(){
     return(
         <>

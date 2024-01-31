@@ -145,7 +145,7 @@ export default function Home() {
             </nav>
             <div className={styles.container_playList}>
               <div className={styles.playlist_textLink}>
-                <TextButton textColor="#FFF" text="Spotify Playlists" fontSize="1.5rem" fontWeigth="bold" />
+                <TextButton textColor="#FFF" text="Spotify Artists" fontSize="1.5rem" fontWeigth="bold" />
                 <TextButton textColor="#8F8F8F" text="Show all" />
               </div>
 

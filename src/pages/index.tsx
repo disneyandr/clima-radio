@@ -25,12 +25,21 @@ import getSeveralArtists from "./api/getSeveralArtists";
 
 const inter = Inter({ subsets: ["latin"] });
 
+interface Artist {
+  id: string;
+  name: string;
+  images: { url: string }[];
+  genres: string[];
+}
+
+interface PlaylistData {
+  artists: Artist[];
+}
 
 
 export default function Home() {
-
-  const [playlistData, setPlaylistData] = useState({});
-  const [isLoading, setIsLoading] = useState(true);
+  const [playlistData, setPlaylistData] = useState<PlaylistData | null>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     async function main() {
@@ -45,7 +54,7 @@ export default function Home() {
 
         setPlaylistData(artistsData);
         setIsLoading(false); // Agora que os dados foram carregados, definimos isLoading como false
-      } catch (error) {
+      } catch (error: any) {
         console.error('Erro:', error.message);
       }
     }
@@ -154,12 +163,12 @@ export default function Home() {
                   <p>Carregando...</p>
                 ) : (
                   <>
-                    {playlistData.artists && playlistData.artists.map((artist,index) => (
+                    {playlistData?.artists && playlistData.artists.map((artist,index) => (
                       <Disco
                         key={artist.id}
                         image={artist.images[0].url}
                         titulo={artist.name}
-                        subTitulo={artist.genres}
+                        subTitulo={artist.genres[index]}
                       />
                     ))}
                   </>

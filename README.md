@@ -15,7 +15,11 @@ Projeto Frontend.
   },
 
 ## 💯 Introdução
-O projeto modela partes da plataforma spotify e consome sua API
+O projeto modela partes da plataforma spotify e consome sua API. A estrutura base para o css foi feita usando SASS e trabalhando com os displays: GRIDS e FLEX. 
+Foi criado um grid-template-area para separar a estrutura do projeto e ter mais controle sobre a mesma e dentro das áreas criadas foi trabalhado o display flex.
+Para consumo da API, criei as variaveis globais em .env.local e foram criados dois arquivos, um para pegar o token e outro para consumo do endpoint de artistas.
+Nesse projetto foram criados três componentes para botões, textos e boxes.
+Bom, agora baixa e aproveita =)
 
 ### 🔧 Pré-requisitos
 
@@ -34,7 +38,11 @@ https://climaradio.climadigital.com.br
 ```
 ### 🤖 Tecnologias
  [![Yarn](https://img.shields.io/badge/yarn-%232C8EBB.svg?style=for-the-badge&logo=yarn&logoColor=white)](#)
- [![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/en)
+ [![Next](https://img.shields.io/badge/Nextcloud-0082C9?style=for-the-badge&logo=Nextcloud&logoColor=white)](https://nextjs.org/)
+ [![ReactJS](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://react.dev/)
+ [![Sass](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)](https://sass-lang.com/)
+ 
+ 
  
 
 ### 🧑‍💻 Autores / Colaboradores

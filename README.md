@@ -17,8 +17,8 @@ Projeto Frontend.
 ## 💯 Introdução
 O projeto modela partes da plataforma spotify e consome sua API. A estrutura base para o css foi feita usando SASS e trabalhando com os displays: GRIDS e FLEX. 
 Foi criado um grid-template-area para separar a estrutura do projeto e ter mais controle sobre a mesma e dentro das áreas criadas foi trabalhado o display flex.
-Para consumo da API, criei as variaveis globais em .env.local e foram criados dois arquivos, um para pegar o token e outro para consumo do endpoint de artistas.
-Nesse projetto foram criados três componentes para botões, textos e boxes.
+Para consumo da API, criei as variáveis globais em .env.local e foram criados dois arquivos, um para pegar o token e outro para consumo do endpoint de artistas.
+Também foram criados três componentes para botões, textos e boxes.
 Bom, agora baixa e aproveita =)
 
 ### 🔧 Pré-requisitos

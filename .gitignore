@@ -34,3 +34,35 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Node.js
+node_modules/
+
+# Arquivos de compilação
+.next/
+
+# Arquivos de ambiente
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Outros arquivos específicos do Next.js
+out/
+.cache/
+.next.js/
+
+# Arquivos de log
+logs
+*.log
+
+# Ficheiros temporários
+*.tmp
+*.bak
+*.swp
+
+# Arquivos de configuração
+.DS_Store
+Thumbs.db
+
+# Dependendo do ambiente de desenvolvimento, você pode querer adicionar mais entradas para outros arquivos ou pastas específicos.

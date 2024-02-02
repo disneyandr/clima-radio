@@ -31,10 +31,7 @@ yarn add dotenv
 yarn add sass
 npm run dev ou yarn dev
 
-```
-### ✔ Visite o projeto
-```
-https://climaradio.climadigital.com.br
+
 ```
 ### 🤖 Tecnologias
  [![Yarn](https://img.shields.io/badge/yarn-%232C8EBB.svg?style=for-the-badge&logo=yarn&logoColor=white)](#)

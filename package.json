@@ -2,11 +2,11 @@
   "name": "spotify",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://climaradio.climadigital.com.br",
   "scripts": {
-    "dev": "next dev",
+    "dev": "node server.js",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "NODE_ENV=production node server.js"
   },
   "dependencies": {
     "axios": "^1.6.7",
